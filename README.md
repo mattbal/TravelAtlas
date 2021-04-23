@@ -16,8 +16,8 @@ To build this application, we will use a cross platform language that supports b
 To run the TravelAtlas app locally, clone the github repo and then run:
 
 ```
-cd TravelAtlas // cd into the TravelAtlas folder
-cd TravelAtlas // cd into the app folder
-npm install // install node modules. This only needs to be run once when you first install the project
+cd TravelAtlas   // cd into the TravelAtlas folder
+cd TravelAtlas   // cd into the app folder
+npm install      // install node modules. This only needs to be run once when you first install the project
 npm start
 ```
