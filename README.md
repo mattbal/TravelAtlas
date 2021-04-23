@@ -1,5 +1,5 @@
 # TravelAtlas
-A CS 322 Project
+A project for CS 322 at Washington State University.
 
 ### Contributors
 
