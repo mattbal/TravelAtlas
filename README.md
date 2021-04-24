@@ -11,13 +11,35 @@ We plan to develop a mobile application that provides users with vacation recomm
 
 To build this application, we will use a cross platform language that supports both Android and iOS, create a database of different vacation options, and pull in airfare and hotel cost data from the Internet.
 
-### Setup
+### Setup for Development
 
-To run the TravelAtlas app locally, clone the github repo and then run:
+**NOTE:** To run the app in an iOS simulator, you need to have a mac. To run the Android emulator, you need to have [Android Studio](https://developer.android.com/studio/) installed and you need to setup [this.](https://docs.expo.io/workflow/android-studio-emulator/)
+
+
+To setup TravelAtlas for development, clone the github repo and then run:
 
 ```
 cd TravelAtlas   // cd into the TravelAtlas folder
 cd TravelAtlas   // cd into the app folder
 npm install      // install node modules. This only needs to be run once when you first install the project
-npm start
 ```
+There are two ways you can run the app:
+
+#### 1. Expo Cloud
+Each time you want to run the app, run
+```
+expo start
+```
+and press a, i, or w to open the app in an Android, iOS or Web emulator. Expo will build the app's binaries in the cloud and load it into whichever emulator you chose. For slow computers, this will make running an Android or iOS emulator much faster.
+
+#### 2. Run scripts
+You can also manually run a specific emulator by running one of the following npm run scripts.
+```
+npm run android
+npm run ios
+npm run web
+```
+If you want to the app in the web, using npm run web will be faster than running expo.
+
+#### Common Issues
+If you get an error when trying to the run an Android emulator, try opening the emulator manually by going into Android Studio and then try opening the emulator through expo or npm run android.
