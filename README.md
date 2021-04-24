@@ -41,7 +41,7 @@ npm run android
 npm run ios
 npm run web
 ```
-If you want to the app in the web, using npm run web will be faster than running expo.
+With the exception of web, this will be slower than using Expo Cloud.
 
 ### Common Issues
 If you get an error when trying to the run an Android emulator, try opening the emulator manually by going into Android Studio and then try opening the emulator through expo or npm run android.
