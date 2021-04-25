@@ -50,9 +50,9 @@ You can also manually run a specific emulator by running one of the following `p
 ```
 npm run android
 npm run ios
-npm run web
+npm run web // this is the same as using expo start and opening a web emulator.
 ```
-With the exception of the web script, this will be slower than using Expo Cloud.
+Running an Android or iOS emulator this way will be slower than using Expo Cloud since your computer has to compile all the code. 
 
 ### Common Issues
 If you get an error when trying to the run an Android emulator, try opening the emulator manually first by going into Android Studio. Then run Expo Cloud or one of the Package.json scripts.
