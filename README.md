@@ -13,28 +13,33 @@ To build this application, we will use a cross platform language that supports b
 
 ## Setup for Development
 
-**NOTE:** To run the app in an iOS simulator, you need to have a mac. To run the Android emulator, you need to have [Android Studio](https://developer.android.com/studio/) installed and you need to setup [this.](https://docs.expo.io/workflow/android-studio-emulator/)
+### Prerequisites
 
+- [NodeJS](https://nodejs.org/en/) is installed
+- [Android Studio](https://developer.android.com/studio/) is installed and the Android [emulator is setup](https://docs.expo.io/workflow/android-studio-emulator/)
+- If you want to run the app in an iOS simulator, you need to have a mac. (You can get around this by running the app on an iPhone if you have one)
+
+### Setup
 
 To setup TravelAtlas for development, clone the github repo and then run:
 
 ```
-cd TravelAtlas   // cd into the TravelAtlas folder
-cd TravelAtlas   // cd into the app folder
+cd TravelAtlas   // Navigate into the TravelAtlas folder
+cd TravelAtlas   // Navigate into the app folder
 npm install      // install node modules. This only needs to be run once when you first install the project
 ```
 There are two ways you can run the app:
 
-### 1. Expo Cloud
+#### 1. Expo Cloud
 Each time you want to run the app, run
 ```
 expo start
 ```
-and press a, i, or w to open the app in an Android, iOS or Web emulator. Expo will build the app's binaries in the cloud and load it into whichever emulator you chose. For slow computers, this will make running an Android or iOS emulator much faster.
+and press a, i, or w to open the app in an Android, iOS or Web emulator. Expo will build the app's binaries in the cloud and load it into whichever emulator you chose. For slow computers, this will make running an Android or iOS emulator much faster since Expo's cloud servers are compiling the app for you.
 
-Additionally, you can run the app on your phone by downloading the "Expo Go" app from the app store. Download the app and then scan with your phone's camera the QR code shown when you run expo start.
+You can also run the app on your phone by downloading the "Expo Go" app from the app store and then scanning with your phone's camera the QR code shown when you run `expo start.`
 
-### 2. Run scripts
+#### 2. Run scripts
 You can also manually run a specific emulator by running one of the following npm run scripts.
 ```
 npm run android
