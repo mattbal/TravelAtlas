@@ -37,16 +37,16 @@ expo start
 ```
 and press a, i, or w to open the app in an Android, iOS or Web emulator. Expo will build the app's binaries in the cloud and load it into whichever emulator you chose. For slow computers, this will make running an Android or iOS emulator much faster since Expo's cloud servers are compiling the app for you.
 
-You can also run the app on your phone by downloading the "Expo Go" app from the app store and then scanning with your phone's camera the QR code shown when you run `expo start.`
+You can also run the app on your phone by downloading the "Expo Go" app from the app store and then scanning with your phone's camera the QR code shown when you run `expo start`
 
 #### 2. Run scripts
-You can also manually run a specific emulator by running one of the following npm run scripts.
+You can also manually run a specific emulator by running one of the following `package.json` scripts.
 ```
 npm run android
 npm run ios
 npm run web
 ```
-With the exception of web, this will be slower than using Expo Cloud.
+With the exception of the web script, this will be slower than using Expo Cloud.
 
 ### Common Issues
-If you get an error when trying to the run an Android emulator, try opening the emulator manually by going into Android Studio and then try opening the emulator through expo or npm run android.
+If you get an error when trying to the run an Android emulator, try opening the emulator manually first by going into Android Studio. Then run Expo Cloud or one of the Package.json scripts.
