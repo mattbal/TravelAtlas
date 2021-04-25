@@ -11,7 +11,13 @@ We plan to develop a mobile application that provides users with vacation recomm
 
 To build this application, we will use a cross platform language that supports both Android and iOS, create a database of different vacation options, and pull in airfare and hotel cost data from the Internet.
 
+## Run the app
+
+TODO: Add more info to this section once we finish the app. When the app is done, we will do a production build in react-native that will compile all the code into just a few files.
+
 ## Setup for Development
+
+If you want to perform development work on the app, follow these steps.
 
 ### Prerequisites
 
