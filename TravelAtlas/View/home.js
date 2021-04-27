@@ -1,11 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import styled from 'styled-components/native';
+
+const Body = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Home = () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Body>
       <Text style={{ fontSize: '24px', fontWeight: 'bold' }}>Test Home Screen</Text>
-    </View>
+    </Body>
   );
 };
 
