@@ -11,7 +11,7 @@ const Body = styled.View`
 const Home = () => {
   return (
     <Body>
-      <Text style={{ fontSize: '24px', fontWeight: 'bold' }}>Test Home Screen</Text>
+      <Text value='Test Home Screen' />
     </Body>
   );
 };
