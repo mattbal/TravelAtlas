@@ -37,11 +37,6 @@ const Background = styled.View`
 
     `;
 
-const BackgroundColor = styled.View`
-    flex: 1;
-    background: "blue";
-    `;
-
 const Wrapper = styled.View`
     display: flex;
     flex-direction: column;
@@ -53,6 +48,7 @@ const Screen = styled.View`
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  background: white;
 `;
 
 export default Home;
