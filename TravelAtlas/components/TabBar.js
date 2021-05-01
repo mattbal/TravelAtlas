@@ -7,8 +7,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Colors } from '../styles/Colors';
 import Home from '../view/Home';
 import Search from '../view/Search';
-// import Trips from '../view/Trip';
-// import Profile from '../view/Profile';
+import Trips from './Trip';
+import Profile from '../view/Profile';
 
 const Wrapper = styled.View`
   display: flex;
@@ -36,7 +36,10 @@ const SearchIcon = ({ color }) => {
 const TripsIcon = ({ color }) => {
   return (
     <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
-      <Path d='M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z' />
+      <Path
+        fillRule='evenodd'
+        d='M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z'
+      />
     </Svg>
   );
 };
@@ -44,7 +47,7 @@ const TripsIcon = ({ color }) => {
 const ProfileIcon = ({ color }) => {
   return (
     <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
-      <Path d='M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z' />
+      <Path fillRule='evenodd' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z' />
     </Svg>
   );
 };
@@ -57,9 +60,6 @@ export default function TabBar() {
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color }) => {
-            // if (route.name == 'test') {
-            // }
-
             if (route.name === 'Home') {
               return <HomeIcon color={color} />;
             } else if (route.name === 'Search') {
@@ -78,8 +78,8 @@ export default function TabBar() {
       >
         <Tab.Screen name='Home' component={Home} />
         <Tab.Screen name='Search' component={Search} />
-        {/* <Tab.Screen name='Trips' component={Trips} /> */}
-        {/* <Tab.Screen name='Profile' component={Profile} /> */}
+        <Tab.Screen name='Trips' component={Trips} />
+        <Tab.Screen name='Profile' component={Profile} />
       </Tab.Navigator>
     </NavigationContainer>
   );
