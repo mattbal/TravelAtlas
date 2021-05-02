@@ -3,54 +3,20 @@ import { View, Text, Button } from 'react-native';
 import styled from 'styled-components/native';
 import Svg, { Path, SvgXml } from 'react-native-svg';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Colors } from '../styles/Colors';
 import Home from '../view/Home';
 import Search from '../view/Search';
 import Trips from './Trip';
 import Profile from '../view/Profile';
+import HomeIcon from '../assets/Icons';
+import SearchIcon from '../assets/Icons';
+import { ProfileIcon, SearchIcon } from '../assets/Icons';
 
 const Wrapper = styled.View`
   display: flex;
 `;
-
-const HomeIcon = ({ color }) => {
-  return (
-    <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
-      <Path d='M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z' />
-    </Svg>
-  );
-};
-
-const SearchIcon = ({ color }) => {
-  return (
-    <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
-      <Path
-        fillRule='evenodd'
-        d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z'
-      />
-    </Svg>
-  );
-};
-
-const TripsIcon = ({ color }) => {
-  return (
-    <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
-      <Path
-        fillRule='evenodd'
-        d='M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z'
-      />
-    </Svg>
-  );
-};
-
-const ProfileIcon = ({ color }) => {
-  return (
-    <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
-      <Path fillRule='evenodd' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z' />
-    </Svg>
-  );
-};
 
 const Tab = createBottomTabNavigator();
 
