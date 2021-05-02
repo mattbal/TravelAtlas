@@ -8,7 +8,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Colors } from '../styles/Colors';
 import Home from '../view/Home';
 import Search from '../view/Search';
-import Trips from './Trip';
+// import Trips from '../view/Trips';
+import Trip from '../view/Trip';
 import Profile from '../view/Profile';
 import HomeIcon from '../assets/Icons';
 import SearchIcon from '../assets/Icons';
@@ -44,7 +45,7 @@ export default function TabBar() {
       >
         <Tab.Screen name='Home' component={Home} />
         <Tab.Screen name='Search' component={Search} />
-        <Tab.Screen name='Trips' component={Trips} />
+        <Tab.Screen name='Trips' component={Trip} />
         <Tab.Screen name='Profile' component={Profile} />
       </Tab.Navigator>
     </NavigationContainer>
