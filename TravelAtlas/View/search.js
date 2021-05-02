@@ -1,11 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import styled from 'styled-components/native';
+
+const Screen = styled.View`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  padding-bottom: 48px;
+`;
 
 const Search = () => {
   return (
-    <View>
+    <Screen>
       <Text value='Search page' />
-    </View>
+    </Screen>
   );
 };
 
