@@ -26,7 +26,9 @@ const Screen = styled.View`
 const Home = () => {
   return (
     <SafeArea>
-      <Screen></Screen>
+      <Screen>
+        <Text>Test</Text>
+      </Screen>
     </SafeArea>
   );
 };
