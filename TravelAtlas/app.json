@@ -1,0 +1,12 @@
+{
+  "name": "TravelAtlas",
+  "displayName": "TravelAtlas",
+  "expo": {
+    "name": "TravelAtlas",
+    "slug": "TravelAtlas",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
