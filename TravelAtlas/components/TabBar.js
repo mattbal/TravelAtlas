@@ -11,8 +11,8 @@ import Search from '../view/Search';
 // import Trips from '../view/Trips';
 import Trip from '../view/Trip';
 import Profile from '../view/Profile';
-import HomeIcon from '../assets/Icons';
-import SearchIcon from '../assets/Icons';
+import {TripsIcon} from '../assets/Icons';
+import {HomeIcon} from '../assets/Icons';
 import { ProfileIcon, SearchIcon } from '../assets/Icons';
 
 const Wrapper = styled.View`

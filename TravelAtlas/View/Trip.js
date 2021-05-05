@@ -22,7 +22,7 @@ const Activity = styled.Button`
 const Trip = () => {
   return (
     <Body>
-      <TopImage source={require('../assets/sanDiego2.jpg')} />
+      <TopImage source={require('../assets/losangeles.jpg')} />
       <Text> San Diego </Text>
       <Activity title='Activity 1' onPress={() => console.log('Activity 1 Info')} />
     </Body>
