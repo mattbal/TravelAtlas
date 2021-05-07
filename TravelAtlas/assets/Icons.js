@@ -1,12 +1,16 @@
-export const HomeIcon = ({ color }) => {
+import React from 'react';
+import Svg, { Path, SvgXml } from 'react-native-svg';
+
+const HomeIcon = ({ color }) => {
   return (
     <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
       <Path d='M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z' />
     </Svg>
   );
 };
+export { HomeIcon };
 
-export const SearchIcon = ({ color }) => {
+const SearchIcon = ({ color }) => {
   return (
     <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
       <Path
@@ -16,8 +20,9 @@ export const SearchIcon = ({ color }) => {
     </Svg>
   );
 };
+export { SearchIcon };
 
-export const TripsIcon = ({ color }) => {
+const TripsIcon = ({ color }) => {
   return (
     <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
       <Path
@@ -27,11 +32,26 @@ export const TripsIcon = ({ color }) => {
     </Svg>
   );
 };
+export { TripsIcon };
 
-export const ProfileIcon = ({ color }) => {
+const ProfileIcon = ({ color }) => {
   return (
     <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
       <Path fillRule='evenodd' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z' />
     </Svg>
   );
 };
+export { ProfileIcon };
+
+const BackIcon = ({ color }) => {
+  return (
+    <Svg width='20px' height='20px' viewBox='0 0 20 20' fill={color}>
+      <Path
+        fillRule='evenodd'
+        d='M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z'
+      />
+    </Svg>
+  );
+};
+
+export { BackIcon };

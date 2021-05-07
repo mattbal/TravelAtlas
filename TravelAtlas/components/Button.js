@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { Colors } from '../styles/Colors';
 
-const StyledPressable = styled.Pressable`
+const StyledPressable = styled.TouchableOpacity`
   background: ${(props) => props.bgColor || '#393939'};
   border-radius: 4px;
   padding: 14px 0;
   justify-content: center;
+  margin: ${(props) => props.margin || '0'};
 `;
 
 const StyledText = styled.Text`
@@ -18,17 +19,11 @@ const StyledText = styled.Text`
   text-align: center;
 `;
 
-const StyledView = styled.View`
-  margin: ${(props) => props.margin || '0'};
-`;
-
 const Button = ({ text, bgColor, color, margin, onPress }) => {
   return (
-    <StyledView margin={margin}>
-      <StyledPressable bgColor={bgColor} onPress={() => onPress()}>
-        <StyledText color={color}>{text}</StyledText>
-      </StyledPressable>
-    </StyledView>
+    <StyledPressable bgColor={bgColor} margin={margin} onPress={onPress}>
+      <StyledText color={color}>{text}</StyledText>
+    </StyledPressable>
   );
 };
 

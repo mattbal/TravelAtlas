@@ -64,7 +64,7 @@ const ButtonWrapper = styled.View`
   margin-top: auto;
 `;
 
-const SplashScreen = () => {
+const GetStarted = ({ navigation }) => {
   return (
     <SafeArea>
       <Screen>
@@ -80,8 +80,17 @@ const SplashScreen = () => {
               bgColor={Colors['coolGray-50']}
               text='Signup'
               margin='0 0 14px'
+              onPress={() => {
+                navigation.navigate('Signup');
+              }}
             />
-            <Button bgColor='#393939' text='Login' />
+            <Button
+              bgColor='#393939'
+              text='Login'
+              onPress={() => {
+                navigation.navigate('Login');
+              }}
+            />
           </ButtonWrapper>
         </Wrapper>
       </Screen>
@@ -89,4 +98,4 @@ const SplashScreen = () => {
   );
 };
 
-export default SplashScreen;
+export default GetStarted;
