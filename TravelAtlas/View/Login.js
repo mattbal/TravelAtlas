@@ -1,49 +1,20 @@
 import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, SafeAreaView, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
-import { formik } from 'formik'
+import Button from '../components/Button';
+import { Formik } from 'formik';
+import { Colors } from '../styles/Colors';
+import { BackIcon } from '../assets/Icons';
+
+const SafeArea = styled.SafeAreaView`
+  flex: 1;
+`;
 
 const Body = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
 `;
-
-
-const Login = () => {
-  return (
-    <Body>
-        <Screen>
-            <formik
-                initialValues={{email: "", password: ""}}
-                onSubmit={(values) => {
-
-                }}
-            >   
-                {(props) => (
-                    <View>
-                        <Text>"Email"</Text>
-                        <TextInput
-                            style={Input}
-                            placeholder="Example: email123@gmail.com"
-                            onChangeText={props.handleChange("email")}
-                            value={props.values.email}
-                        />
-                        <Text>"Password"</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Example: Lemon1889"
-                            onChangeText={props.handleChange("password")}
-                            value={props.values.password}
-                        />
-                        <Button title="Login" color="blue"  onPress={props.handleSubmit} />
-                    </View>
-                )}
-            </formik>
-        </Screen>
-    </Body>
-  );
-};
 
 const Screen = styled.View`
   display: flex;
@@ -53,9 +24,77 @@ const Screen = styled.View`
   background: white;
 `;
 
-const Input = styled.View`
-    height: 40;
-    margin: 12;
-    borderWidth: 1;
-    `;
+const Input = styled.TextInput`
+  margin-bottom: 14px;
+  padding: 10px;
+  border: 1px solid ${Colors['coolGray-300']};
+  font-size: 14px;
+  border-radius: 6px;
+`;
+
+const Wrapper = styled.View`
+  padding: 18px;
+  padding-top: 48px;
+  height: 100%;
+`;
+
+const StyledText = styled.Text`
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 4px;
+`;
+
+const StyledHeader = styled.Text`
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Inter;
+  color: ${(props) => props.color || Colors['coolGray-800']};
+  margin-bottom: 24px;
+`;
+
+const StyledPressable = styled.TouchableOpacity`
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 20px;
+  height: 20px;
+`;
+
+const Login = ({ navigation, handleSubmit }) => {
+  return (
+    <SafeArea>
+      <Screen>
+        <Wrapper>
+          <StyledPressable onPress={() => navigation.goBack()}>
+            <BackIcon />
+          </StyledPressable>
+          <StyledHeader>Login</StyledHeader>
+          <Formik initialValues={{ email: '', password: '' }} onSubmit={(values) => {}}>
+            {(props) => (
+              <View>
+                <StyledText>Email</StyledText>
+                <Input
+                  placeholder='Enter your email'
+                  onChangeText={props.handleChange('email')}
+                  value={props.values.email}
+                />
+                <StyledText>Password</StyledText>
+                <Input
+                  placeholder='Enter your password'
+                  onChangeText={props.handleChange('password')}
+                  value={props.values.password}
+                />
+                <Button
+                  bgColor='#393939'
+                  text='Login'
+                  onPress={() => navigation.navigate('TabBar')}
+                />
+              </View>
+            )}
+          </Formik>
+        </Wrapper>
+      </Screen>
+    </SafeArea>
+  );
+};
+
 export default Login;
