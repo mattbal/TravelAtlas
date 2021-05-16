@@ -8,38 +8,51 @@ import GetStarted from './View/GetStarted';
 import Login from './View/Login';
 import Signup from './View/Signup';
 import AppLoading from 'expo-app-loading';
-import {
-  useFonts,
-  Inter_400Regular,
-  Inter_500Medium,
-  Inter_700Bold,
-} from '@expo-google-fonts/inter';
+import * as Font from 'expo-font';
+// import {
+//   Inter_400Regular,
+//   Inter_500Medium,
+//   Inter_700Bold,
+// } from '@expo-google-fonts/inter';
 import { connect } from 'react-redux';
 
-export default function App() {
-  let [fontsLoaded, error] = useFonts({
-    Inter_400Regular,
-    Inter_500Medium,
-    Inter_700Bold,
-  });
+export default class App extends React.Component {
+  state = {
+    fontsLoaded: false,
+  };
 
-  const Stack = createStackNavigator();
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
+  async _loadFontsAsync() {
+    await Font.loadAsync({
+      Inter: require('./assets/Inter-Regular.ttf'),
+      'Inter-Medium': require('./assets/Inter-Medium.ttf'),
+      'Inter-Bold': require('./assets/Inter-Bold.ttf'),
+    });
+    this.setState({ fontsLoaded: true });
   }
 
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName='Get Started'
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name='Get Started' component={GetStarted} />
-        <Stack.Screen name='Login' component={Login} />
-        <Stack.Screen name='Signup' component={Signup} />
-        <Stack.Screen name='TabBar' component={TabBar} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  componentDidMount() {
+    this._loadFontsAsync();
+  }
+
+  render() {
+    const Stack = createStackNavigator();
+
+    if (!this.state.fontsLoaded) {
+      return <AppLoading />;
+    } else {
+      return (
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName='Get Started'
+            screenOptions={{ headerShown: false }}
+          >
+            <Stack.Screen name='Get Started' component={GetStarted} />
+            <Stack.Screen name='Login' component={Login} />
+            <Stack.Screen name='Signup' component={Signup} />
+            <Stack.Screen name='TabBar' component={TabBar} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      );
+    }
+  }
 }

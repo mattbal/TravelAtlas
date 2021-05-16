@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, TextInput, SafeAreaView, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  SafeAreaView,
+  TouchableHighlight,
+  TouchableOpacity,
+} from 'react-native';
 import styled from 'styled-components/native';
 import Button from '../components/Button';
 import { Formik } from 'formik';
@@ -19,9 +26,8 @@ const Body = styled.View`
 const Screen = styled.View`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background: white;
 `;
 
 const Input = styled.TextInput`
@@ -40,14 +46,13 @@ const Wrapper = styled.View`
 
 const StyledText = styled.Text`
   font-size: 12px;
-  font-weight: 500;
+  font-family: Inter-Medium;
   margin-bottom: 4px;
 `;
 
 const StyledHeader = styled.Text`
   font-size: 24px;
-  font-weight: 700;
-  font-family: Inter;
+  font-family: Inter-Bold;
   color: ${(props) => props.color || Colors['coolGray-800']};
   margin-bottom: 24px;
 `;
@@ -63,57 +68,69 @@ const StyledView = styled.View`
   height: 100%;
 `;
 
+const Background = styled.View`
+  flex: 1;
+  background: white;
+`;
+
 const Signup = ({ navigation, handleSubmit }) => {
   return (
-    <SafeArea>
-      <Screen>
-        <Wrapper>
-          <StyledPressable onPress={() => navigation.goBack()}>
-            <BackIcon />
-          </StyledPressable>
-          <StyledHeader>Signup</StyledHeader>
-          <Formik
-            initialValues={{ name: '', email: '', password: '' }}
-            onSubmit={(values) => {}}
-          >
-            {(props) => (
-              <View>
-                <StyledText>Name</StyledText>
-                <Input
-                  placeholder='Enter your name'
-                  onChangeText={props.handleChange('name')}
-                  value={props.values.name}
-                />
-                <StyledText>Email</StyledText>
-                <Input
-                  placeholder='Enter your email'
-                  onChangeText={props.handleChange('email')}
-                  value={props.values.email}
-                />
-                <StyledText>Password</StyledText>
-                <Input
-                  placeholder='Enter your password'
-                  onChangeText={props.handleChange('password')}
-                  value={props.values.password}
-                />
-                <StyledText>Confirm Password</StyledText>
-                <Input
-                  placeholder='Enter your password'
-                  onChangeText={props.handleChange('password')}
-                  value=''
-                />
-                <Button
-                  margin='24px 0 0 0'
-                  bgColor='#393939'
-                  text='Signup'
-                  onPress={() => navigation.navigate('TabBar')}
-                />
-              </View>
-            )}
-          </Formik>
-        </Wrapper>
-      </Screen>
-    </SafeArea>
+    <Background>
+      <SafeArea>
+        <Screen>
+          <Wrapper>
+            <StyledPressable onPress={() => navigation.goBack()} activeOpacity={0.9}>
+              <BackIcon />
+            </StyledPressable>
+            <StyledHeader>Signup</StyledHeader>
+            <Formik
+              initialValues={{ name: '', email: '', password: '', confirmPassword: '' }}
+              onSubmit={(values) => {}}
+            >
+              {(props) => (
+                <View>
+                  <StyledText>Name</StyledText>
+                  <Input
+                    autoFocus
+                    autoCapitalize='words'
+                    onChangeText={props.handleChange('name')}
+                    value={props.values.name}
+                  />
+                  <StyledText>Email</StyledText>
+                  <Input
+                    type='email'
+                    keyboardType='email-address'
+                    onChangeText={props.handleChange('email')}
+                    value={props.values.email}
+                  />
+                  <StyledText>Password</StyledText>
+                  <Input
+                    secureTextEntry
+                    type='password'
+                    onChangeText={props.handleChange('password')}
+                    value={props.values.password}
+                  />
+                  <StyledText>Confirm Password</StyledText>
+                  <Input
+                    secureTextEntry
+                    type='password'
+                    onChangeText={props.handleChange('confirmPassword')}
+                    value={props.values.confirmPassword}
+                  />
+                  <Button
+                    margin='24px 0 0 0'
+                    bgColor='#393939'
+                    text='Signup'
+                    onPress={() => navigation.navigate('TabBar')}
+                    underlayColor={'#4D4D4D'}
+                  />
+                </View>
+              )}
+            </Formik>
+          </Wrapper>
+        </Screen>
+      </SafeArea>
+    </Background>
   );
 };
 

@@ -19,9 +19,8 @@ const Body = styled.View`
 const Screen = styled.View`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background: white;
 `;
 
 const Input = styled.TextInput`
@@ -40,14 +39,13 @@ const Wrapper = styled.View`
 
 const StyledText = styled.Text`
   font-size: 12px;
-  font-weight: 500;
+  font-family: Inter-Medium;
   margin-bottom: 4px;
 `;
 
 const StyledHeader = styled.Text`
   font-size: 24px;
-  font-weight: 700;
-  font-family: Inter;
+  font-family: Inter-Bold;
   color: ${(props) => props.color || Colors['coolGray-800']};
   margin-bottom: 24px;
 `;
@@ -59,41 +57,52 @@ const StyledPressable = styled.TouchableOpacity`
   height: 20px;
 `;
 
+const Background = styled.View`
+  flex: 1;
+  background: white;
+`;
+
 const Login = ({ navigation, handleSubmit }) => {
   return (
-    <SafeArea>
-      <Screen>
-        <Wrapper>
-          <StyledPressable onPress={() => navigation.goBack()}>
-            <BackIcon />
-          </StyledPressable>
-          <StyledHeader>Login</StyledHeader>
-          <Formik initialValues={{ email: '', password: '' }} onSubmit={(values) => {}}>
-            {(props) => (
-              <View>
-                <StyledText>Email</StyledText>
-                <Input
-                  placeholder='Enter your email'
-                  onChangeText={props.handleChange('email')}
-                  value={props.values.email}
-                />
-                <StyledText>Password</StyledText>
-                <Input
-                  placeholder='Enter your password'
-                  onChangeText={props.handleChange('password')}
-                  value={props.values.password}
-                />
-                <Button
-                  bgColor='#393939'
-                  text='Login'
-                  onPress={() => navigation.navigate('TabBar')}
-                />
-              </View>
-            )}
-          </Formik>
-        </Wrapper>
-      </Screen>
-    </SafeArea>
+    <Background>
+      <SafeArea>
+        <Screen>
+          <Wrapper>
+            <StyledPressable onPress={() => navigation.goBack()} activeOpacity={0.9}>
+              <BackIcon />
+            </StyledPressable>
+            <StyledHeader>Login</StyledHeader>
+            <Formik initialValues={{ email: '', password: '' }} onSubmit={(values) => {}}>
+              {(props) => (
+                <View>
+                  <StyledText>Email</StyledText>
+                  <Input
+                    autoFocus
+                    type='email'
+                    keyboardType='email-address'
+                    onChangeText={props.handleChange('email')}
+                    value={props.values.email}
+                  />
+                  <StyledText>Password</StyledText>
+                  <Input
+                    secureTextEntry
+                    type='password'
+                    onChangeText={props.handleChange('password')}
+                    value={props.values.password}
+                  />
+                  <Button
+                    bgColor='#393939'
+                    text='Login'
+                    onPress={() => navigation.navigate('TabBar')}
+                    underlayColor={'#4D4D4D'}
+                  />
+                </View>
+              )}
+            </Formik>
+          </Wrapper>
+        </Screen>
+      </SafeArea>
+    </Background>
   );
 };
 

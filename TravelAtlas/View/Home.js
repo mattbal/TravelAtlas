@@ -1,74 +1,55 @@
-import { NavigationHelpersContext } from '@react-navigation/core';
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
+import { Colors } from '../styles/Colors';
 
-import img from '../assets/homeBackground.jpeg';
-import img1 from '../assets/palmTree.jpeg';
-
-const Body = styled.View`
+const SafeArea = styled.SafeAreaView`
   flex: 1;
-  align-items: center;
-  justify-content: center;
 `;
-
-const Home = () => {
-  return (
-    <Body>
-      <Screen>
-        <Background>
-          <HomeText style={{ color: 'white', fontSize: 50 }}>
-            Welcome To TravelAtlas
-          </HomeText>
-        </Background>
-      </Screen>
-    </Body>
-  );
-};
-
-const Background = styled.View`
-  flex-grow: 1;
-  border: 1px solid #000;
-  background-image: url(${img});
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-`;
-
-const Wrapper = styled.View`
-    display: flex;
-    text-align: center;
-    image: 
-    margin-top: 7%;
-    margin-bottom: auto;
-    padding: 27px 18px 18px;
-    `;
 
 const Screen = styled.View`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+`;
+
+const Wrapper = styled.View`
+  padding: 18px;
+  padding-top: 48px;
+  height: 100%;
+`;
+
+const StyledHeader = styled.Text`
+  font-size: 24px;
+  font-family: Inter-Bold;
+  color: ${(props) => props.color || Colors['coolGray-800']};
+  margin-bottom: 24px;
+`;
+
+const StyledP = styled.Text`
+  font-size: 16px;
+  font-family: Inter;
+  color: ${(props) => props.color || 'white'};
+`;
+
+const Background = styled.View`
+  flex: 1;
   background: white;
 `;
 
-const PalmTree = styled.View`
-  flex: 1;
-  position: absolute;
-  background-image: url(${img1});
-  width: 7%;
-  height: 7%;
-  margin-top: 1.4%;
-  background-size: contain;
-  background-repeat: no-repeat;
-`;
-
-const HomeText = styled.View`
-  display: flex;
-  text-align: center;
-  margin-top: 7%;
-  margin-bottom: auto;
-`;
+const Home = () => {
+  return (
+    <Background>
+      <SafeArea>
+        <Screen>
+          <Wrapper>
+            <StyledHeader>Find a trip</StyledHeader>
+          </Wrapper>
+        </Screen>
+      </SafeArea>
+    </Background>
+  );
+};
 
 export default Home;

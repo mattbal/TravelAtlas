@@ -10,9 +10,8 @@ const SafeArea = styled.SafeAreaView`
 const Screen = styled.View`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background: white;
 `;
 
 const Input = styled.TextInput`
@@ -31,27 +30,33 @@ const Wrapper = styled.View`
 
 const StyledText = styled.Text`
   font-size: 12px;
-  font-weight: 500;
+  font-family: Inter-Medium;
   margin-bottom: 4px;
 `;
 
 const StyledHeader = styled.Text`
   font-size: 24px;
-  font-weight: 700;
-  font-family: Inter;
+  font-family: Inter-Bold;
   color: ${(props) => props.color || Colors['coolGray-800']};
   margin-bottom: 24px;
 `;
 
+const Background = styled.View`
+  flex: 1;
+  background: white;
+`;
+
 const Profile = () => {
   return (
-    <SafeArea>
-      <Screen>
-        <Wrapper>
-          <StyledHeader>Profile</StyledHeader>
-        </Wrapper>
-      </Screen>
-    </SafeArea>
+    <Background>
+      <SafeArea>
+        <Screen>
+          <Wrapper>
+            <StyledHeader>Profile</StyledHeader>
+          </Wrapper>
+        </Screen>
+      </SafeArea>
+    </Background>
   );
 };
 

@@ -11,6 +11,7 @@ import styled from 'styled-components/native';
 import img from '../assets/flamingo-bg.jpg';
 import { Colors } from '../styles/Colors';
 import Button from '../components/Button';
+import flamingo from '../assets/flamingo-bg.jpg';
 
 const SafeArea = styled.SafeAreaView`
   flex: 1;
@@ -19,17 +20,13 @@ const SafeArea = styled.SafeAreaView`
 const Screen = styled.View`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 `;
 
-const Background = styled.View`
-  background-image: url(${img});
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
+const Background = styled.ImageBackground`
+  flex: 1;
+  justify-content: center;
 `;
 
 const Wrapper = styled.View`
@@ -39,15 +36,13 @@ const Wrapper = styled.View`
 
 const StyledHeader = styled.Text`
   font-size: 32px;
-  font-weight: 700;
-  font-family: Inter;
+  font-family: Inter-Bold;
   color: ${(props) => props.color || 'white'};
   margin-bottom: 10px;
 `;
 
 const StyledP = styled.Text`
   font-size: 16px;
-  font-weight: 400;
   font-family: Inter;
   color: ${(props) => props.color || 'white'};
 `;
@@ -66,35 +61,38 @@ const ButtonWrapper = styled.View`
 
 const GetStarted = ({ navigation }) => {
   return (
-    <SafeArea>
-      <Screen>
-        <Background></Background>
-        <Wrapper>
-          <TitleWrapper>
-            <StyledHeader>TravelAtlas</StyledHeader>
-            <StyledP>Find your next dream vacation.</StyledP>
-          </TitleWrapper>
-          <ButtonWrapper>
-            <Button
-              color={Colors['coolGray-800']}
-              bgColor={Colors['coolGray-50']}
-              text='Signup'
-              margin='0 0 14px'
-              onPress={() => {
-                navigation.navigate('Signup');
-              }}
-            />
-            <Button
-              bgColor='#393939'
-              text='Login'
-              onPress={() => {
-                navigation.navigate('Login');
-              }}
-            />
-          </ButtonWrapper>
-        </Wrapper>
-      </Screen>
-    </SafeArea>
+    <Background source={flamingo} resizeMode='cover'>
+      <SafeArea>
+        <Screen>
+          <Wrapper>
+            <TitleWrapper>
+              <StyledHeader>TravelAtlas</StyledHeader>
+              <StyledP>Find your next dream vacation.</StyledP>
+            </TitleWrapper>
+            <ButtonWrapper>
+              <Button
+                color={Colors['coolGray-800']}
+                bgColor={Colors['coolGray-50']}
+                text='Signup'
+                margin='0 0 14px'
+                onPress={() => {
+                  navigation.navigate('Signup');
+                }}
+                underlayColor={Colors['coolGray-200']}
+              />
+              <Button
+                bgColor='#393939'
+                text='Login'
+                onPress={() => {
+                  navigation.navigate('Login');
+                }}
+                underlayColor={'#4D4D4D'}
+              />
+            </ButtonWrapper>
+          </Wrapper>
+        </Screen>
+      </SafeArea>
+    </Background>
   );
 };
 

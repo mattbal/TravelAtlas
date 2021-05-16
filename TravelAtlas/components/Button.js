@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableHighlight } from 'react-native';
 import styled from 'styled-components/native';
 import { Colors } from '../styles/Colors';
 
-const StyledPressable = styled.TouchableOpacity`
+const StyledPressable = styled.TouchableHighlight`
   background: ${(props) => props.bgColor || '#393939'};
   border-radius: 4px;
   padding: 14px 0;
@@ -13,15 +13,19 @@ const StyledPressable = styled.TouchableOpacity`
 
 const StyledText = styled.Text`
   font-size: 16px;
-  font-weight: 500;
-  font-family: Inter;
+  font-family: Inter-Medium;
   color: ${(props) => props.color || 'white'};
   text-align: center;
 `;
 
-const Button = ({ text, bgColor, color, margin, onPress }) => {
+const Button = ({ text, bgColor, color, margin, onPress, underlayColor }) => {
   return (
-    <StyledPressable bgColor={bgColor} margin={margin} onPress={onPress}>
+    <StyledPressable
+      bgColor={bgColor}
+      margin={margin}
+      onPress={onPress}
+      underlayColor={underlayColor}
+    >
       <StyledText color={color}>{text}</StyledText>
     </StyledPressable>
   );

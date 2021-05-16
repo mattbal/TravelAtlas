@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   FlatList,
+  Image,
 } from 'react-native';
 import styled from 'styled-components/native';
 import { Colors } from '../styles/Colors';
@@ -21,9 +22,8 @@ const SafeArea = styled.SafeAreaView`
 const Screen = styled.View`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background: white;
 `;
 
 const Input = styled.TextInput`
@@ -41,39 +41,34 @@ const Wrapper = styled.View`
 `;
 
 const TopImage = styled.Image`
-  height: 180;
+  height: 180px;
   width: 100%;
-  background-size: cover;
-  background-position: center;
   border-radius: 6px;
   margin-bottom: 20px;
 `;
 
 const StyledText = styled.Text`
   font-size: 12px;
-  font-weight: 500;
+  font-family: Inter-Medium;
   margin-bottom: 4px;
 `;
 
 const StyledTitle = styled.Text`
   font-size: 24px;
-  font-weight: 700;
   margin-bottom: 24px;
-  font-family: Inter;
+  font-family: Inter-Bold;
   color: ${(props) => props.color || Colors['coolGray-800']};
 `;
 
 const StyledHeader = styled.Text`
   font-size: 24px;
-  font-weight: 700;
-  font-family: Inter;
+  font-family: Inter-Bold;
   color: ${(props) => props.color || Colors['coolGray-800']};
 `;
 
 const StyledPrice = styled.Text`
   font-size: 24px;
-  font-weight: 700;
-  font-family: Inter;
+  font-family: Inter-Bold;
   color: ${(props) => props.color || Colors['coolGray-800']};
   margin-left: auto;
 `;
@@ -106,31 +101,38 @@ const TripWrapper = styled.View`
   margin-bottom: 48px;
 `;
 
+const Background = styled.View`
+  flex: 1;
+  background: white;
+`;
+
 const Trip = () => {
   return (
-    <SafeArea>
-      <Screen>
-        <Wrapper>
-          <StyledTitle>Trips</StyledTitle>
-          <TripWrapper>
-            <TopImage source={image} />
-            <StyledDiv>
-              <StyledHeader>Los Angeles</StyledHeader>
-              <StyledPrice>$530</StyledPrice>
-            </StyledDiv>
-            <StyledLocation>Los Angeles, CA</StyledLocation>
-          </TripWrapper>
-          <TripWrapper>
-            <TopImage source={sandiego} />
-            <StyledDiv>
-              <StyledHeader>San Diego</StyledHeader>
-              <StyledPrice>$680</StyledPrice>
-            </StyledDiv>
-            <StyledLocation>San Diego, CA</StyledLocation>
-          </TripWrapper>
-        </Wrapper>
-      </Screen>
-    </SafeArea>
+    <Background>
+      <SafeArea>
+        <Screen>
+          <Wrapper>
+            <StyledTitle>Trips</StyledTitle>
+            <TripWrapper>
+              <TopImage source={image} resizeMode='cover' />
+              <StyledDiv>
+                <StyledHeader>Los Angeles</StyledHeader>
+                <StyledPrice>$530</StyledPrice>
+              </StyledDiv>
+              <StyledLocation>Los Angeles, CA</StyledLocation>
+            </TripWrapper>
+            <TripWrapper>
+              <TopImage source={sandiego} resizeMode='cover' />
+              <StyledDiv>
+                <StyledHeader>San Diego</StyledHeader>
+                <StyledPrice>$680</StyledPrice>
+              </StyledDiv>
+              <StyledLocation>San Diego, CA</StyledLocation>
+            </TripWrapper>
+          </Wrapper>
+        </Screen>
+      </SafeArea>
+    </Background>
   );
 };
 
