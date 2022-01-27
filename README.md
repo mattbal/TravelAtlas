@@ -5,7 +5,9 @@
 Gabriel Byram, Lovee Baccus, Morgan Baccus, Matthew Balint, Shira Feinberg, and Tom Arad
 
 ## Project Description
-This project was completed as part of our CS 322 class at Washington State University. The class focused on the software development process and covered various topics like how to create Use-Case Diagrams and the pros and cons of different Process Models like Agile vs Waterfall. While learning this material, we were also tasked with planning out our own software program. Since the emphasis of the course was on the software development process, we were only given three weeks at the end of the semester to code our program and turn it into reality. As a result, the app isn't completely finished, but a rough prototype is completed.
+This project was completed as part of our CS 322 class at Washington State University. The class focused on the software development process and covered various topics like how to create Use-Case Diagrams and the pros and cons of different Process Models like Agile vs Waterfall. While learning this material, we were also tasked with planning out our own software program. As we'll explain below, we chose to create a Travel App.
+
+Since the emphasis of the course was on the software development process, we were only given three weeks at the end of the semester to code our program and turn it into reality. As a result, the app isn't completely finished, but a rough prototype has been completed and a Python script has been made to scrape flight and hotel data from bing.com
 
 ## Mission Statement
 
