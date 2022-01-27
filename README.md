@@ -1,11 +1,13 @@
 # TravelAtlas
-A project for CS 322 at Washington State University.
 
 ## Contributors
 
 Gabriel Byram, Lovee Baccus, Morgan Baccus, Matthew Balint, Shira Feinberg, and Tom Arad
 
 ## Project Description
+This project was completed as part of our CS 322 class at Washington State University. The class focused on the software development process and covered various topics like how to create Use-Case Diagrams and the pros and cons of different Process Models like Agile vs Waterfall. While learning this material, we were also tasked with planning out our own software program. Since the emphasis of the course was on the software development process, we were only given three weeks at the end of the semester to code our program and turn it into reality. As a result, the app isn't completely finished, but a rough prototype is completed.
+
+## Mission Statement
 
 We plan to develop a mobile application that provides users with vacation recommendations based on their preferences for price, weather and activities. By collecting this data, we can query a database of different vacation options and return a list that best matches the user’s criteria. As a result, our application will significantly reduce the time and stress it takes to plan a vacation.
 
